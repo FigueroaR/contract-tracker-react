@@ -1,9 +1,9 @@
-
+import Contracts from "./contract/Contracts";
 
 function App() {
   return (
     <div className="App">
-      hellooooooo
+      <Contracts/>
     </div>
   );
 }
