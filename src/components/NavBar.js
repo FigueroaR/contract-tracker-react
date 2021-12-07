@@ -13,8 +13,9 @@ const link = {
 const NavBar = (props) => {
     return(
         <div className="navbar">
-            <NavLink to="/contract/new" style={link}>New Contract</NavLink>
             <NavLink to="/" style={link}>Home</NavLink>
+            <NavLink to="/contract/new" style={link}>New Contract</NavLink>
+            
         </div>
     )
 }

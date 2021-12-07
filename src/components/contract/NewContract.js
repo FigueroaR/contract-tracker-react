@@ -1,7 +1,10 @@
+import NavBar from '../NavBar';
+
 function NewContract(){
     return(
         <div>
-            new contract form here
+            <h1>New Contract</h1>
+            <NavBar/>
         </div>
     )
 }
