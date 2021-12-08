@@ -22,9 +22,10 @@ export const getContracts = () => {
     }
 }
 
-export const getContract = () => {
+export const getContract = (obj) => {
     return (dispatch) => {
-        
+        console.log("Action", obj)
+        dispatch({type: "GET_CONTRACT", payload: obj})
     }
 }
 

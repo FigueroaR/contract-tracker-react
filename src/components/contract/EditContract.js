@@ -1,5 +1,8 @@
 import NavBar from "../NavBar";
 
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
+
 function EditContract(){
     return(
         <div>
@@ -9,4 +12,8 @@ function EditContract(){
     )
 }
 
-export default EditContract;
+const mapStateToProps = (store) => ({
+    contract: store.contractState.currentContract
+})
+
+export default connect(mapStateToProps, null)(EditContract);

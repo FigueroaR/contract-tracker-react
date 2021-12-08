@@ -6,6 +6,9 @@ import NavBar from '../NavBar';
 import {connect} from 'react-redux'
 
 function Contracts(props){
+
+    
+
     console.log(props.contracts)
     let list = props.contracts.map( item =>{
         console.log("item", item)
