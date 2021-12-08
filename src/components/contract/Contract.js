@@ -8,7 +8,7 @@ function Contract(props){
             employeesTotal,
             pastDue} = props.details.data;
 
-    console.log("individual contratc", props, props.details.id, dateOfcompletion)
+    console.log("individual contratc", props.details.id)
     return(
         <div>
             <h1>{contractName}</h1>

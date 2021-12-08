@@ -12,7 +12,8 @@ export const contractState = ( state = initialState, action) => {
         
         case "GET_CONTRACTS": 
             console.log("Reducer GET contracts", action)
-            return {...state, contracts: [...state.contracts, action.payload]}
+            return {...state, 
+                    contracts: [...new Set([action.payload])] }
 
         default:
             return state
