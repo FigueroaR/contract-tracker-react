@@ -12,7 +12,7 @@ export const contractState = ( state = initialState, action) => {
         
         case "GET_CONTRACTS": 
             console.log("Reducer GET contracts", action)
-            return {...state, contracts: [...state.contracts, action.payload.data]}
+            return {...state, contracts: [...state.contracts, action.payload]}
 
         default:
             return state

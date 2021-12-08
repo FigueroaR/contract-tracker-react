@@ -11,7 +11,7 @@ export const getContracts = () => {
         .then((snapshot) => {
             snapshot.forEach( inContract => {
                 
-                let contract = {data: inContract.data()}
+                let contract = {id: inContract.id, data: inContract.data()}
                 console.log(inContract.id, contract.data)
                 dispatch({type: "GET_CONTRACTS" , payload: contract})
             })
