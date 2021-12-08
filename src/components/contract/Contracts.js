@@ -7,9 +7,8 @@ import {connect} from 'react-redux'
 
 function Contracts(props){
 
-    
 
-    console.log(props.contracts)
+    console.log("ALL contracts", props.contracts)
     let list = props.contracts.map( item =>{
         console.log("item", item)
         return <li key={item.id}><Contract details={item} key={item.id}/></li>

@@ -5,7 +5,7 @@ import firebase from 'firebase'
 // import { initializeApp } from 'firebase/app';
 //////////////////////////////////////////////////////////////////////
 import Home from './components/Home'
-import Contract from "./components/contract/Contract";
+import ReadContract from "./components/contract/ReadContract";
 import NewContract from "./components/contract/NewContract"
 import EditContract from "./components/contract/EditContract"
 /////////////////////////////////////////////////////////////////////
@@ -35,7 +35,7 @@ class App extends Component {
 
               <Route exact path="/" element={ <Home />} />
               <Route exact path="/contract/new" element={ <NewContract/> }/>
-              <Route exact path="/contract/:id" element={ <Contract/> }/>
+              <Route exact path="/contract/:id" element={ <ReadContract/> }/>
               <Route exact path="/contract/:id/edit" element={ <EditContract/>}/>
             </Routes>
           </Router>
