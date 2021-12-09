@@ -27,27 +27,13 @@ function Contract(props){
         props.getContract(props.details)
     }
 
-    let onClickEdit = () => {
-        console.log("onclick edit", id)
-        props.getContract(props.details)
-        navigate(`/contract/${id}/edit`)
-    }
-
-    let onClickDelete = () => {
-        console.log("delete", id)
-        //props.deleteContract(id) or something likethat
-        navigate(`/`)
-    }
-
-
     return(
-        <div onClick={onClickRead}>
-            <h1>{contractName}</h1>
-            <h2>{contractManager}</h2>
-            <p>Active: {active ? "true" : "false"}</p>
-   
-            <button className="contract edit" onClick={onClickEdit}>Edit</button>
-            <button className="contract delete" onClick={onClickDelete}>Delete</button>
+        <div>
+            <div onClick={onClickRead}>  
+                <h1>{contractName}</h1>
+                <h2>{contractManager}</h2>
+                <p>Active: {active ? "true" : "false"}</p>
+            </div>
         </div>
         
     )

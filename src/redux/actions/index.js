@@ -29,13 +29,15 @@ export const getContract = (obj) => {
     }
 }
 
-export const postContract = () => {
+export const postContract = (obj) => {
+    
     return (dispatch) => {
         
     }
 }
 
-export const editContract = () => {
+export const editContract = (obj) => {
+    console.log("EDIT CONTRACT  ", obj)
     return (dispatch) => {
         
     }
