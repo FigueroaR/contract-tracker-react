@@ -8,7 +8,7 @@ import {bindActionCreators} from 'redux'
 
 
 function Contract(props){
-   
+    
     let navigate = useNavigate()
     const {active,
             budget,

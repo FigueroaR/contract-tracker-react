@@ -1,6 +1,7 @@
 import firebase from 'firebase'
+import uuid from 'react-uuid'
 
-import {GET_CONTRACTS,  GET_CONTRACT} from "../constants"
+//import {GET_CONTRACTS,  GET_CONTRACT} from "../constants"
 
 export const getContracts = () => {
     return (dispatch) => {
@@ -30,9 +31,13 @@ export const getContract = (obj) => {
 }
 
 export const postContract = (obj) => {
-    
+    console.log("POST", obj)
     return (dispatch) => {
-        
+        console.log("GET CONTRACTS")
+        firebase.firestore()
+        .collection("contracts")
+        .doc(uuid())
+        .set()
     }
 }
 
