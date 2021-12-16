@@ -31,13 +31,20 @@ export const getContract = (obj) => {
 }
 
 export const postContract = (obj) => {
-    console.log("POST", obj)
+    console.log("POST", obj, )
     return (dispatch) => {
-        console.log("GET CONTRACTS")
         firebase.firestore()
         .collection("contracts")
         .doc(uuid())
-        .set()
+        .set({
+            active: obj.active,
+            budget: obj.budget,
+            contractManager: obj. contractManager,
+            contractName: obj.contractName,
+            dateOfcompletion: obj.dateOfcompletion,
+            employeesTotal: obj.employeesTotal,
+            pastDue: obj.pastDue
+        })
     }
 }
 
