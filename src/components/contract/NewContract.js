@@ -17,21 +17,18 @@ function NewContract(props){
     const [budget, setBudget] = useState("")
     const [dateOfcompletion, setDateOfcompletion] = useState("")
     const [employeesTotal, setEmployeesTotal] = useState("")
-    const [active, setActive] = useState(false)
-    const [pastDue, setPastDue]  = useState(true)
+    const [active, setActive] = useState("No")
+    const [pastDue, setPastDue]  = useState("Yes")
 
     let onClickCancel = () => {
         console.log("cancel")
-        //navigate("/")
-    }
-
-    let handleClick = () => {
-
+        navigate("/")
     }
 
     let handleSubmit = (e) => {
         e.preventDefault()
         props.postContract({contractName, contractManager, budget, dateOfcompletion, employeesTotal, active, pastDue})
+        navigate("/")
     }
 
     return(
