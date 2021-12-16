@@ -1,4 +1,4 @@
-import {getContract} from '../../redux/actions/index'
+import {getContract, deleteContract} from '../../redux/actions/index'
 
 import NavBar from "../NavBar";
 
@@ -32,7 +32,7 @@ function ReadContract(props){
 
     let onClickDelete = () => {
         console.log("delete", id)
-        //props.deleteContract(id) or something likethat
+        props.deleteContract(id)
         navigate(`/`)
     }
 
@@ -59,7 +59,7 @@ const mapStateToProps = (store) => ({
 })
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
-    getContract
+    getContract, deleteContract
   }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReadContract);

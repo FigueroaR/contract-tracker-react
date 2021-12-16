@@ -61,8 +61,11 @@ export const editContract = (obj) => {
     }
 }
 
-export const deleteContract = () => {
+export const deleteContract = (id) => {
     return (dispatch) => {
-        
+        firebase.firestore()
+        .collection("contracts")
+        .doc(id)
+        .delete()
     }
 }
