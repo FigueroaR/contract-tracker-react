@@ -4,12 +4,13 @@ import Contracts from "./contract/Contracts"
 
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
-import {getContracts} from "../redux/actions/index"
+import {getContracts, clearContracts} from "../redux/actions/index"
 
 function Home(props) {
     useEffect(() =>{
+        props.clearContracts()
         props.getContracts()
-    }, []
+    }
     )
     return(
         <div className="Home">
@@ -25,7 +26,7 @@ function Home(props) {
 }
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
-    getContracts,
+    getContracts, clearContracts
 }, dispatch )
 
 export default connect(null, mapDispatchToProps)(Home)

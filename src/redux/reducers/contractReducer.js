@@ -9,11 +9,14 @@ const initialState = {
 
 export const contractState = ( state = initialState, action) => {
     switch(action.type) {
+        case "CLEAR_CONTRACTS":
+            return {...state, 
+                    contracts: []}
         
         case "GET_CONTRACTS": 
             console.log("Reducer GET contracts", action)
             return {...state, 
-                    contracts: [...new Set([action.payload])] }
+                    contracts: [ ...new Set(state.contracts.concat(action.payload)) ] }
 
         case "GET_CONTRACT":
             return {...state, 

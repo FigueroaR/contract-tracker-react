@@ -3,6 +3,12 @@ import uuid from 'react-uuid'
 
 //import {GET_CONTRACTS,  GET_CONTRACT} from "../constants"
 
+export const clearContracts = () => {
+    return (dispatch) => {
+        dispatch({type: "CLEAR_CONTRACTS"})
+    }
+}
+
 export const getContracts = () => {
     return (dispatch) => {
         console.log("GET CONTRACTS")

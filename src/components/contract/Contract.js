@@ -32,7 +32,7 @@ function Contract(props){
             <div onClick={onClickRead}>  
                 <h1>{contractName}</h1>
                 <h2>{contractManager}</h2>
-                <p>Active: {active ? "true" : "false"}</p>
+                <p>Active: {active === "Yes" ? "true" : "false"}</p>
             </div>
         </div>
         
