@@ -12,7 +12,8 @@ import {bindActionCreators} from 'redux'
 function ReadContract(props){
    
     let navigate = useNavigate()
-    const {active,
+    if(props.contract){
+        const {active,
             budget,
             contractManager,
             contractName,
@@ -22,7 +23,7 @@ function ReadContract(props){
 
     const { id }  = props.contract
 
-    console.log("READ individual contract", props.contract)
+    console.log("READ individual contract", props.contract, active, budget, contractName)
 
     let onClickEdit = () => {
         console.log("onclick edit", id)
@@ -44,7 +45,7 @@ function ReadContract(props){
             <h2>{contractManager}</h2>
             <p>budget: {budget}</p> 
             <p>employees: {employeesTotal}</p> 
-            <p>Date of completion: {dateOfcompletion[0]}</p> 
+            <p>Date of completion: {dateOfcompletion}</p> 
             <p>Active: {active === "Yes" ? "true" : "false"}</p>
             <p>past due: {pastDue === "Yes" ? "true" : "false"}</p>  
             <button className="contract edit" onClick={onClickEdit}>Edit</button>
@@ -52,6 +53,8 @@ function ReadContract(props){
         </div>
         
     )
+    } else {return <div>LOADING</div>}
+    
 }
 
 const mapStateToProps = (store) => ({

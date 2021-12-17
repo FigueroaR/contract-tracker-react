@@ -10,7 +10,10 @@ import {bindActionCreators} from 'redux'
 function Contract(props){
     
     let navigate = useNavigate()
-    const {active,
+    
+    
+    if(props.details){
+        const {active,
             budget,
             contractManager,
             contractName,
@@ -18,25 +21,27 @@ function Contract(props){
             employeesTotal,
             pastDue} = props.details.data;
 
-    const { id }  = props.details
+        const { id }  = props.details
 
-    console.log("individual contratc", props.details.id)
+        let onClickRead = () => {
+            navigate(`/contract/${id}/`)
+            props.getContract(props.details)
+        }    
 
-    let onClickRead = () => {
-        navigate(`/contract/${id}/`)
-        props.getContract(props.details)
-    }
+        console.log("individual contratc", props.details.id)
 
-    return(
-        <div>
-            <div onClick={onClickRead}>  
-                <h1>{contractName}</h1>
-                <h2>{contractManager}</h2>
-                <p>Active: {active === "Yes" ? "true" : "false"}</p>
+        return(
+            <div>
+                <div onClick={onClickRead}>  
+                    <h1>{contractName}</h1>
+                    <h2>{contractManager}</h2>
+                    <p>Active: {active === "Yes" ? "true" : "false"}</p>
+                </div>
             </div>
-        </div>
-        
-    )
+            
+        )
+    } else {return <div>LOADING</div>}
+    
 }
 
 const mapStateToProps = (store) => ({

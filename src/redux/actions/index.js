@@ -57,7 +57,28 @@ export const postContract = (obj) => {
 export const editContract = (obj) => {
     console.log("EDIT CONTRACT  ", obj)
     return (dispatch) => {
-        
+        firebase.firestore()
+        .collection("contracts")
+        .doc(obj.id)
+        .set({
+            active: obj.data.newActive,
+            budget: obj.data.newBudget,
+            contractManager: obj.data.newContractManager,
+            contractName: obj.data.newContractName,
+            dateOfcompletion: obj.data.newDateOfcompletion,
+            employeesTotal: obj.data.newEmployeesTotal,
+            pastDue: obj.data.newPastDue
+        })
+        dispatch({type: "GET_CONTRACT", payload: {id: obj.id , data: { 
+            active: obj.data.newActive,
+            budget: obj.data.newBudget,
+            contractManager: obj.data.newContractManager,
+            contractName: obj.data.newContractName,
+            dateOfcompletion: obj.data.newDateOfcompletion,
+            employeesTotal: obj.data.newEmployeesTotal,
+            pastDue: obj.data.newPastDue}
+            }
+        })
     }
 }
 
