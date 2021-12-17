@@ -70,17 +70,17 @@ function EditContract(props){
                         <label>Edit Employees: </label>
                         <input type="text" placeholder={employeesTotal} onBlur={newEmployeesTotal.length === 0 ? setNewEmployeesTotal(employeesTotal) : null} onChange={e => setNewEmployeesTotal(e.target.value)}  /><br/>
                         <label>Edit Active</label>
-                        <select value={newActive}>
-                            <option  selected={() => setNewActive(true)}>true</option>
-                            <option  selected={() => setNewActive(false)}>false</option>
+                        <select value={active} onChange={ e => setNewActive(e.target.value)} >
+                            <option >Yes</option>
+                            <option >No</option>
                         </select> <br/>
                         <label>Edit Past Due:</label>
-                        <select value={newPastDue}  >
-                            <option  selected={() => setNewActive(true)}>true</option>
-                            <option  selected={() => setNewActive(false)}>false</option>
+                        <select value={pastDue} onChange={ e => setNewPastDue(e.target.value)} >
+                            <option >Yes</option>
+                            <option >No</option>
                         </select><br/>
-                        <label>Edit Completion date</label>
-                        <input type="date"  onChange={e => setNewDateOfcompletion(e.target.value)}/> <br/>
+                        <label>Edit Completion date: {dateOfcompletion}</label><br/>
+                        <input type="date" pvalue={newDateOfcompletion} onChange={e => setNewDateOfcompletion(e.target.value)}/> <br/>
                         
                         <input type="submit" value="Edit Contract" />
                     </form>

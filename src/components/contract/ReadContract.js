@@ -45,8 +45,8 @@ function ReadContract(props){
             <p>budget: {budget}</p> 
             <p>employees: {employeesTotal}</p> 
             <p>Date of completion: {dateOfcompletion[0]}</p> 
-            <p>Active: {active == "Yes" ? "true" : "false"}</p>
-            <p>past due: {pastDue == "Yes" ? "true" : "false"}</p>  
+            <p>Active: {active === "Yes" ? "true" : "false"}</p>
+            <p>past due: {pastDue === "Yes" ? "true" : "false"}</p>  
             <button className="contract edit" onClick={onClickEdit}>Edit</button>
             <button className="contract delete" onClick={onClickDelete}>Delete</button>
         </div>

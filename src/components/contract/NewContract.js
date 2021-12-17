@@ -6,7 +6,7 @@ import {bindActionCreators} from 'redux'
 import { useNavigate } from "react-router";
 
 import {postContract} from '../../redux/actions/index'
-import { useEffect } from "react/cjs/react.development";
+
 
 function NewContract(props){
     console.log("PROPS CREATE", props)

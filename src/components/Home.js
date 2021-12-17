@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 import NavBar from "./NavBar"
 import Contracts from "./contract/Contracts"
 

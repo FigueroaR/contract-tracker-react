@@ -1,7 +1,6 @@
-import React, { useState} from 'react'
+
 import { useHistory } from "react-router-dom";
 import Contract from "./Contract"
-import NavBar from '../NavBar';
 
 import {connect} from 'react-redux'
 
