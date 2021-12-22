@@ -45,7 +45,7 @@ export const postContract = (obj) => {
         .set({
             active: obj.active,
             budget: obj.budget,
-            contractManager: obj. contractManager,
+            contractManager: obj.contractManager,
             contractName: obj.contractName,
             dateOfcompletion: obj.dateOfcompletion,
             employeesTotal: obj.employeesTotal,
